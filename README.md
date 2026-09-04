@@ -100,21 +100,69 @@ Every single skill in this suite is hardened by 5 inviolable operational clauses
 
 ---
 
-## 🚀 Installation & Harness Integration
+## 🚀 Installation & Integration
 
-### 1. DeepSeek Harness (DSH)
-Copy or symlink the `skills/` directory into your project's `.dsh/skills` or container `~/.dsh/skills`:
+### Option 1: Instant CLI Installer via `npx` (Recommended)
+
+You can install all 45 skills into your environment with a single command — no git clone needed:
+
 ```bash
-mkdir -p ~/.dsh/skills
-cp -r skills/* ~/.dsh/skills/
+# Default: installs into DeepSeek Harness (~/.dsh/skills)
+npx @bebbolus/the-architect-skills install
+
+# Install into Claude Code (~/.claude/skills)
+npx @bebbolus/the-architect-skills install --claude
+
+# Install into Cursor (~/.cursor/skills)
+npx @bebbolus/the-architect-skills install --cursor
+
+# Install into current project workspace (./.dsh/skills)
+npx @bebbolus/the-architect-skills install --project
+
+# Install across all detected harness environments
+npx @bebbolus/the-architect-skills install --all
+
+# Install only specific operatives
+npx @bebbolus/the-architect-skills install --only auditor,critic,oracle,builder
 ```
-The DSH filesystem discovery provider (`@deepseek-ai/dsh-skill-filesystem`) will automatically register all 45 skills into the session catalog.
 
-### 2. Antigravity & Claude Code / Goose
-Copy or symlink into `.agents/skills`:
+#### Explore and Inspect Skills from CLI:
 ```bash
-mkdir -p .agents/skills
-cp -r skills/* .agents/skills/
+# List all 45 skills with their identities
+npx @bebbolus/the-architect-skills list
+
+# Read the full instructions of a specific operative
+npx @bebbolus/the-architect-skills info threat-modeler
+```
+
+---
+
+### Option 2: DeepSeek Harness (DSH) Native Cordis Plugin
+
+`@bebbolus/the-architect-skills` is a dual-mode package that also acts as a native DSH Cordis plugin.
+
+1. Install the package in your DSH environment or container:
+```bash
+npm install -g @bebbolus/the-architect-skills
+```
+
+2. Register it in your DSH configuration (`dsh.config.yml`):
+```yaml
+plugins:
+  - name: '@bebbolus/the-architect-skills'
+```
+
+DSH will mount the provider directly into `ctx.skills`, making all 45 skills accessible to sessions in-memory without creating filesystem files.
+
+---
+
+### Option 3: Manual Clone / Symlink
+
+If you prefer classic filesystem symlinks:
+```bash
+git clone https://github.com/Bebbolus/the-architect-skills.git
+mkdir -p ~/.dsh/skills
+cp -r the-architect-skills/skills/* ~/.dsh/skills/
 ```
 
 ---

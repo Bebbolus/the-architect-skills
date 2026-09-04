@@ -1,0 +1,52 @@
+{
+  "name": "@bebbolus/the-architect-skills",
+  "version": "1.0.0",
+  "description": "45 specialized operative agentic skills from The Architect cognitive architecture. Dual-mode: CLI installer via npx and native DeepSeek Harness (DSH) Cordis plugin.",
+  "type": "module",
+  "main": "./lib/index.js",
+  "bin": {
+    "the-architect-skills": "./bin/cli.js",
+    "architect-skills": "./bin/cli.js"
+  },
+  "exports": {
+    ".": "./lib/index.js",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "skills",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "test": "node bin/cli.js list",
+    "list": "node bin/cli.js list",
+    "install:dsh": "node bin/cli.js install --dsh",
+    "install:claude": "node bin/cli.js install --claude"
+  },
+  "keywords": [
+    "dsh",
+    "dsh-plugin",
+    "deepseek-harness",
+    "skills",
+    "agentic",
+    "claude-code",
+    "opencode",
+    "the-architect",
+    "ai-agents"
+  ],
+  "author": "Bebbolus",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bebbolus/the-architect-skills.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Bebbolus/the-architect-skills/issues"
+  },
+  "homepage": "https://github.com/Bebbolus/the-architect-skills#readme"
+}
