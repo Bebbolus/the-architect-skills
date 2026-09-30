@@ -1,3 +1,5 @@
+> **⚠️ ARCHIVED / OBSOLETO.** This repository is deprecated. The canonical, maintained version of The Architect lives at **https://github.com/Bebbolus/the-architect**. Please use that repository instead.
+
 # 🏛️ The Architect Skills: Universal Agent Archetypes & Specialized Operatives
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
